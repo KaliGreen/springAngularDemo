@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  angular:
+    build: ./angular-app
+    container_name: angular-app
+    ports:
+      - "80:80"
+    depends_on:
+      - springboot
+
+  springboot:
+    build: ./springboot-app
+    container_name: springboot-app
+    expose:
+      - "8080"
